@@ -14,14 +14,14 @@ export default function MainProduct({ product }) {
   const [productsSelected, setProductsSelected] = useState([product])
   const [productsInCart, setProductsInCart] = useContext(CartContext)
 
-  const ProductTitleComputed = (productTitle) => {
-    let title = productTitle.split(' ')
-    if (productTitle.length === 3) {
-      title.splice(1, 1)
-      title.join(' ')
-    }
-    return title
-  }
+  // const ProductTitleComputed = (productTitle) => {
+  //   let title = productTitle.split(' ')
+  //   if (productTitle.length === 3) {
+  //     title.splice(1, 1)
+  //     title.join(' ')
+  //   }
+  //   return title
+  // }
 
   const ProductSelected = (props) => {
     console.info('Añadido al carrito')
@@ -44,7 +44,7 @@ export default function MainProduct({ product }) {
             /> */}
             <MainProductImageStyled src={product.img} alt={product.title} />
           </SelectedProductStyled>
-          <TitleMainProductStyled>{JSON.stringify(ProductTitleComputed(product.title))}</TitleMainProductStyled>
+          <TitleMainProductStyled>{product.title}</TitleMainProductStyled>
         </FlexStyled>
       </ContainerStyled>
     </MainProductStyled>
