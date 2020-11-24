@@ -50,3 +50,4 @@ export default function MainProduct({ product }) {
     </MainProductStyled>
   )
 }
+
