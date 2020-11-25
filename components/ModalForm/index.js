@@ -18,8 +18,8 @@ export default function ModalForm({ modalView, setModalView, dispatchProductsInC
 
   const onSubmit = data => {
     const BaseUrl = 'https://api.whatsapp.com/send?phone=584125544458'
-    const __ = '%0A'
-    const _ = '%20'
+    const __ = '%0A' // Saltos de Linea
+    const _ = '%20' //Espacios
 
     console.log(data, productsInCart)
     window.open(`
