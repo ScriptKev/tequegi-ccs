@@ -6,7 +6,7 @@ function App({ Component, pageProps }) {
   return (
     <AppLayout>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="description" content="Tequegi el sabor que nos une" />
         <meta name="keywords" content="Tequegi, tequeños, delivery caracas" />
         <meta name="author" content="Tequegi" />

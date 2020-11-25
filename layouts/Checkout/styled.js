@@ -30,3 +30,12 @@ export const ItemProductInCart = styled.li`
   opacity: 1;
   transition: all 300ms ease-in-out;
 `
+
+export const CartEmptyStyled = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`

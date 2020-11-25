@@ -1,15 +1,16 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { CheckoutLayoutStyled, ContainerStyled, CheckoutWidget, ItemProductInCart } from "./styled";
+import { CheckoutLayoutStyled, ContainerStyled, CheckoutWidget, ItemProductInCart, CartEmptyStyled } from "./styled";
 import ProductInCheckout from 'components/ProductInCheckout';
-import ButtonPay from 'components/ButtonPay';
+import Button from 'components/Button';
 
-export default function CheckoutLayout({ productsInCart, dispatchProductsInCart }) {
+export default function CheckoutLayout({ productsInCart, dispatchProductsInCart, setModalView }) {
   const router = useRouter()
 
   const PayProductsInCart = () => {
-    router.push('/compra-exitosa')
-      .then(() => dispatchProductsInCart([]))
+    setModalView(true)
+    // router.push('/compra-exitosa')
+    //   .then(() => dispatchProductsInCart([]))
   }
 
   const TotalProductsInCart = (products) => {
@@ -30,11 +31,11 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart 
   }
 
   if (productsInCart.length === 0) return (
-    <div style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+    <CartEmptyStyled>
       <h2>Sin Productos en el carrito</h2>
 
-      <ButtonPay title='Regresar' handleClick={() => router.push('/')} />
-    </div>
+      <Button title='Regresar' handleClick={() => router.push('/')} />
+    </CartEmptyStyled>
   )
 
   return (
@@ -56,7 +57,6 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart 
               </ItemProductInCart>)
           }
         </ul>
-        <ButtonPay title='Confirmar Orden' handleClick={PayProductsInCart} />
       </ContainerStyled>
 
       <CheckoutWidget>
@@ -78,7 +78,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart 
           </div>
 
           <div style={{ marginTop: '10px' }}>
-            <ButtonPay title='Confirmar Orden' handleClick={PayProductsInCart} />
+            <Button title='Confirmar Orden' handleClick={PayProductsInCart} />
           </div>
 
           <div style={{ marginTop: '10px' }}>
