@@ -1,6 +1,9 @@
 {
   "name": "tequegi",
-  "description": "Tienda virtual - Tequegi - El sabor que nos une",
+  "description": "Tequegi - El sabor que nos une",
+  "author": {
+    "name": "ScriptKev"
+  },
   "version": "0.4.0",
   "private": true,
   "scripts": {
