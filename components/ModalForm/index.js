@@ -56,7 +56,7 @@ export default function ModalForm({ modalView, setModalView, dispatchProductsInC
               <InputStyled name='fullName' type='text' placeholder='Nombre y Apellido' ref={register} />
               <InputStyled
                 name='phone'
-                placeholder='Numero de telefono...'
+                placeholder='Numero de telefono'
                 type='text'
                 ref={register({ required: true, maxLength: 11, minLength: 8 })}
               />
