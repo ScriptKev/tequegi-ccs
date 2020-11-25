@@ -41,13 +41,17 @@ export default function ModalForm({ modalView, setModalView, dispatchProductsInC
     <ModalFormStyled showModal={modalView}>
       <PositioningModal>
         <FormStyled onSubmit={handleSubmit(onSubmit)}>
-          <CloseModal onClick={() => setModalView(false)}>X</CloseModal>
+          <CloseModal onClick={() => setModalView(false)}>
+            <img src='/icons/close.svg' width='20px' height='20px' alt='close-icon' />
+          </CloseModal>
+
           <FormBackground>
-            <span style={{ display: 'flex' }}>
+            <span>
               Recibiremos su orden via whatsapp
               <img style={{ paddingTop: '5px', marginLeft: '5px' }} src='/icons/whatsapp.svg' width='20px' height='20px' alt='whatsapp-icon' />
               {/* <Image src='/icons/whatsapp.svg' width={20} height={20} alt='whatsapp-icon' /> */}
             </span>
+
             <FieldSetStyled>
               <InputStyled name='fullName' type='text' placeholder='Nombre y Apellido' ref={register} />
               <InputStyled
