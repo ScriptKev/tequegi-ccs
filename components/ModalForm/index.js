@@ -16,16 +16,25 @@ export default function ModalForm({ modalView, setModalView, dispatchProductsInC
   const { register, handleSubmit, watch, errors } = useForm()
   const router = useRouter()
 
+  const totalPrice = (products) => {
+    let productPriceAcum = 0
+
+    products.forEach(item => productPriceAcum += item.price)
+    return parseFloat(productPriceAcum).toFixed(2)
+  }
+
   const onSubmit = data => {
     const BaseUrl = 'https://api.whatsapp.com/send?phone=584125544458'
     const __ = '%0A' // Saltos de Linea
     const _ = '%20' //Espacios
 
     console.log(data, productsInCart)
+
     window.open(`
       ${BaseUrl}&text=Hola${_}soy${_}${data.fullName}
       ${__}${__}Estoy${_}interesado${_}en${_}su${_}producto${_}${productsInCart.map(product => product.title)}
-      ${__}${__}Mi${_}numero${_}es${_}${data.phone}`,
+      ${__}${__}Mi${_}numero${_}es${_}${data.phone}
+      ${__}${__}Soy${_}conciente${_}del${_}costo${_}total:${_}${totalPrice(productsInCart)}$`,
       '_blank',
       'toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=600'
     )
