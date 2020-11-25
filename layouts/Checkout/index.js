@@ -74,7 +74,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
           </header>
 
           <div style={{ fontSize: '18px', display: 'flex' }}>
-            <span>Total: {TotalProductsInCart(productsInCart)}</span>
+            <span>Total: {TotalProductsInCart(productsInCart)}$</span>
           </div>
 
           <div style={{ marginTop: '10px' }}>
