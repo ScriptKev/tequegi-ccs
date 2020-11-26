@@ -47,7 +47,11 @@ export default function MainProduct({ product }) {
             /> */}
             <MainProductImageStyled src={product.img} alt={product.title} />
           </SelectedProductStyled>
-          <TitleMainProductStyled>{ProductTitleComputed(product.title)}</TitleMainProductStyled>
+
+          <TitleMainProductStyled>
+            <h1>{ProductTitleComputed(product.title)}</h1>
+          </TitleMainProductStyled>
+
         </FlexStyled>
       </ContainerStyled>
     </MainProductStyled>

@@ -4,6 +4,11 @@ export const ContainerStyled = styled.section`
   width: 100%;
   height: 100%;
   margin: 50px 0 0 auto;
+
+
+  @media (min-width: 320px) and (max-width: 760px) {
+    margin: 25px 0 0 auto;
+  }
 `
 export const TitleCategoriesStyled = styled.div`
   max-width: 1000px;

@@ -1,8 +1,16 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { CheckoutLayoutStyled, ContainerStyled, CheckoutWidget, ItemProductInCart, CartEmptyStyled } from "./styled";
+import {
+  CheckoutLayoutStyled,
+  ContainerStyled,
+  ItemProductInCart,
+  CartEmptyStyled,
+  CheckoutWidgetSection,
+  CheckoutWidget
+} from "./styled";
 import ProductInCheckout from 'components/ProductInCheckout';
 import Button from 'components/Button';
+import { CloseModal } from 'components/ModalForm/styled';
 
 export default function CheckoutLayout({ productsInCart, dispatchProductsInCart, setModalView }) {
   const router = useRouter()
@@ -40,7 +48,6 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
 
   return (
     <CheckoutLayoutStyled>
-      <div></div>
       <ContainerStyled>
         <h3 style={{ color: '#332927' }}>Productos Seleccionados</h3>
         <ul>
@@ -53,22 +60,22 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
                   price={price}
                   img={img}
                 />
-                <i style={{ cursor: 'pointer' }} onClick={() => removeProductInCart(index)}>X</i>
+                <img
+                  onClick={() => removeProductInCart(index)}
+                  src='/icons/close.svg'
+                  width='20px'
+                  height='20px'
+                  alt='close-icon'
+                  style={{ marginTop: '15px' }}
+                />
+                {/* <i style={{ cursor: 'pointer', width: 'min-content', height: 'min-content' }} onClick={() => removeProductInCart(index)}>X</i> */}
               </ItemProductInCart>)
           }
         </ul>
       </ContainerStyled>
 
-      <CheckoutWidget>
-        <div style={{
-          width: '215px',
-          height: '200px',
-          position: 'fixed',
-          marginTop: '20vh',
-          backgroundColor: '#d0d0d0',
-          padding: '20px 30px',
-          borderRadius: '10px'
-        }}>
+      <CheckoutWidgetSection>
+        <CheckoutWidget>
           <header style={{ height: '50px' }}>
             <h4 style={{ fontSize: '25px', margin: 'auto' }}>Precio Total</h4>
           </header>
@@ -86,8 +93,8 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
               <a>Seguir comprando</a>
             </Link>
           </div>
-        </div>
-      </CheckoutWidget>
+        </CheckoutWidget>
+      </CheckoutWidgetSection>
     </CheckoutLayoutStyled>
   )
 }
