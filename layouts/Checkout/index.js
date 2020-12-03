@@ -28,10 +28,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
 
   const removeProductInCart = (productindex) => {
     dispatchProductsInCart(prevProducts => {
-      console.log(prevProducts)
       prevProducts.splice(productindex, 1)
-      console.log(prevProducts)
-
       return [...prevProducts]
     })
   }
