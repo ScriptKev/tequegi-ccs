@@ -6,19 +6,17 @@ import {
   ItemProductInCart,
   CartEmptyStyled,
   CheckoutWidgetSection,
-  CheckoutWidget
+  CheckoutWidget,
+  KeepBuyingStyled
 } from "./styled";
 import ProductInCheckout from 'components/ProductInCheckout';
-import Button from 'components/Button';
-import { CloseModal } from 'components/ModalForm/styled';
+import ButtonPay from 'components/Button';
 
 export default function CheckoutLayout({ productsInCart, dispatchProductsInCart, setModalView }) {
   const router = useRouter()
 
   const PayProductsInCart = () => {
     setModalView(true)
-    // router.push('/compra-exitosa')
-    //   .then(() => dispatchProductsInCart([]))
   }
 
   const TotalProductsInCart = (products) => {
@@ -42,7 +40,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
     <CartEmptyStyled>
       <h2>Sin Productos en el carrito</h2>
 
-      <Button title='Regresar' handleClick={() => router.push('/')} />
+      <ButtonPay title='Regresar' handleClick={() => router.push('/')} />
     </CartEmptyStyled>
   )
 
@@ -66,7 +64,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
                   width='20px'
                   height='20px'
                   alt='close-icon'
-                  style={{ marginTop: '15px' }}
+                  style={{ marginTop: '15px', cursor: 'pointer' }}
                 />
                 {/* <i style={{ cursor: 'pointer', width: 'min-content', height: 'min-content' }} onClick={() => removeProductInCart(index)}>X</i> */}
               </ItemProductInCart>)
@@ -85,14 +83,14 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
           </div>
 
           <div style={{ marginTop: '10px' }}>
-            <Button title='Confirmar Orden' handleClick={PayProductsInCart} />
+            <ButtonPay title='Confirmar Orden' handleClick={PayProductsInCart} />
           </div>
 
-          <div style={{ marginTop: '10px' }}>
+          <KeepBuyingStyled>
             <Link href='/'>
               <a>Seguir comprando</a>
             </Link>
-          </div>
+          </KeepBuyingStyled>
         </CheckoutWidget>
       </CheckoutWidgetSection>
     </CheckoutLayoutStyled>

@@ -79,10 +79,7 @@ export const TitleMainProductStyled = styled.div`
 
   @media (min-width: 320px) and (max-width: 1000px) {
     font-size: 40px;
-
-    & h1 {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   @media (min-width: 320px) and (max-width: 440px) {

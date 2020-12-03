@@ -1,7 +1,6 @@
-import React from 'react'
 import { GlobalStyled, AppLayoutStyled } from "./style";
 
-function AppLayout({ children }) {
+export default function AppLayout({ children }) {
   return (
     <AppLayoutStyled>
       <GlobalStyled />
@@ -9,5 +8,3 @@ function AppLayout({ children }) {
     </AppLayoutStyled>
   )
 }
-
-export default AppLayout

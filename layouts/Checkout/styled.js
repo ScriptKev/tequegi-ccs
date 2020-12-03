@@ -42,6 +42,14 @@ export const CheckoutWidgetSection = styled.section`
   }
 `
 
+export const KeepBuyingStyled = styled.div`
+  margin-top: 10px;
+
+  & a:hover {
+    color: white;
+  }
+`
+
 export const ItemProductInCart = styled.li`
   width: 100%;
   display:flex;

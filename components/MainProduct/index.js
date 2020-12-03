@@ -9,6 +9,7 @@ import {
   TitleMainProductStyled,
   MainProductImageStyled
 } from './style'
+import ButtonPay from 'components/Button'
 
 export default function MainProduct({ product }) {
   const [productsSelected, setProductsSelected] = useState([product])
@@ -50,6 +51,11 @@ export default function MainProduct({ product }) {
 
           <TitleMainProductStyled>
             <h1>{ProductTitleComputed(product.title)}</h1>
+            <p style={{ fontSize: '16px', fontWeight: '600', letterSpacing: 'normal' }}>{product.description}</p>
+            <ButtonPay
+              title='Añadir al carrito'
+              handleClick={() => ProductSelected(product)}
+            />
           </TitleMainProductStyled>
 
         </FlexStyled>

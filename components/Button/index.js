@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { ButtonPayStyled, ButtonConfirmStyled } from './styled'
 
 export default function ButtonPay({ title, handleClick, submit }) {
@@ -7,4 +8,16 @@ export default function ButtonPay({ title, handleClick, submit }) {
   } else {
     return <ButtonPayStyled onClick={handleClick}>{title}</ButtonPayStyled>
   }
+}
+
+ButtonPay.propTypes = {
+  title: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  submit: PropTypes.bool
+}
+
+ButtonPay.defaultProps = {
+  title: 'Boton default',
+  handleClick: () => console.log('Click default'),
+  submit: false
 }
