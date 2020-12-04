@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const teques = [
   {
-    id: 1,
+    id: 5,
     title: 'Tequeño clasico',
     description: 'Tequeño con queso',
     url: 'teque-clasico',
@@ -9,7 +9,7 @@ const teques = [
     price: 1.4
   },
   {
-    id: 2,
+    id: 6,
     title: 'Tequeño con chocolate',
     description: 'Tequeño con chocolate',
     url: 'teque-chocolate',
@@ -17,7 +17,7 @@ const teques = [
     price: 4
   },
   {
-    id: 3,
+    id: 7,
     title: 'Tequeño con guayaba',
     description: 'Tequeño con guayaba',
     url: 'teque-guayaba',

@@ -15,6 +15,28 @@ import ButtonPay from 'components/Button';
 export default function CheckoutLayout({ productsInCart, dispatchProductsInCart, setModalView }) {
   const router = useRouter()
 
+  const productInCartComp = () => {
+    const productComputed = [];
+
+    productsInCart.forEach((product) => {
+      if (productComputed.some((item) => item.id === product.id)) {
+        const productToModifeIndex = productComputed.findIndex(
+          (itemComp) => itemComp.id === product.id
+        );
+        productComputed[productToModifeIndex].stock += 1;
+      } else {
+        const { ...data } = product;
+        const prodcutToPush = {
+          ...data,
+          stock: 1
+        };
+        productComputed.push(prodcutToPush);
+      }
+    });
+
+    return productComputed;
+  };
+
   const PayProductsInCart = () => {
     setModalView(true)
   }
@@ -26,9 +48,11 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
     return parseFloat(productPriceAcum).toFixed(2)
   }
 
-  const removeProductInCart = (productindex) => {
+  const removeProductInCart = (productId) => {
+    const productIdx = productsInCart.findIndex(itemComp => itemComp.id === productId)
+
     dispatchProductsInCart(prevProducts => {
-      prevProducts.splice(productindex, 1)
+      prevProducts.splice(productIdx, 1)
       return [...prevProducts]
     })
   }
@@ -47,16 +71,18 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
         <h3 style={{ color: '#332927' }}>Productos Seleccionados</h3>
         <ul>
           {
-            productsInCart.map(({ id, title, price, img, url }, index) =>
+            productInCartComp().map(({ id, title, price, img, url, stock }) =>
               <ItemProductInCart key={id}>
                 <ProductInCheckout
-                  id={id + 1}
+                  id={id}
                   title={title}
                   price={price}
                   img={img}
+                  url={url}
+                  stock={stock}
                 />
                 <img
-                  onClick={() => removeProductInCart(index)}
+                  onClick={() => removeProductInCart(id)}
                   src='/icons/close.svg'
                   width='20px'
                   height='20px'

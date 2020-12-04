@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const tortas = [
   {
-    id: 1,
+    id: 8,
     title: 'Torta clasica',
     description: 'Torta tipo Poque',
     url: 'torta-clasica',
@@ -9,7 +9,7 @@ const tortas = [
     price: 2.3
   },
   {
-    id: 2,
+    id: 9,
     title: 'Torta de chocolate',
     description: 'Torta de chocolate',
     url: 'torta-chocolate',
@@ -17,7 +17,7 @@ const tortas = [
     price: 6.3
   },
   {
-    id: 3,
+    id: 10,
     title: ' Torta de guayaba',
     description: 'Torta de guayaba',
     url: 'torta-guayaba',

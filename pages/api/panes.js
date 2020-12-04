@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const panes = [
   {
-    id: 1,
+    id: 3,
     title: 'Pan campesino',
     description: 'Pan campesino',
     url: 'pan-campesino',
@@ -9,7 +9,7 @@ const panes = [
     price: 3
   },
   {
-    id: 2,
+    id: 4,
     title: 'Pan de chocolate',
     description: 'Pan de chocolate',
     url: 'pan-chocolate',
