@@ -8,6 +8,28 @@ export default function Checkout() {
   const [modalView, setModalView] = useState(false)
   const [productsInCart, setProductsInCart] = useContext(CartContext)
 
+  const productInCartComp = () => {
+    const productComputed = [];
+
+    productsInCart.forEach((product) => {
+      if (productComputed.some((item) => item.id === product.id)) {
+        const productToModifeIndex = productComputed.findIndex(
+          (itemComp) => itemComp.id === product.id
+        );
+        productComputed[productToModifeIndex].stock += 1;
+      } else {
+        const { ...data } = product;
+        const prodcutToPush = {
+          ...data,
+          stock: 1
+        };
+        productComputed.push(prodcutToPush);
+      }
+    });
+
+    return productComputed;
+  };
+
   return (
     <>
       <Head>
@@ -15,7 +37,7 @@ export default function Checkout() {
       </Head>
 
       <ModalForm
-        productsInCart={productsInCart}
+        productsInCart={productInCartComp()}
         setModalView={setModalView}
         dispatchProductsInCart={setProductsInCart}
         modalView={modalView}
@@ -25,7 +47,7 @@ export default function Checkout() {
         // productsToPay={productsToPay(productsInCart)}
         setModalView={setModalView}
         dispatchProductsInCart={setProductsInCart}
-        productsInCart={productsInCart}
+        productsInCart={productInCartComp()}
       />
     </>
   )

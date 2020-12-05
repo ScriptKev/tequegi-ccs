@@ -15,27 +15,7 @@ import ButtonPay from 'components/Button';
 export default function CheckoutLayout({ productsInCart, dispatchProductsInCart, setModalView }) {
   const router = useRouter()
 
-  const productInCartComp = () => {
-    const productComputed = [];
 
-    productsInCart.forEach((product) => {
-      if (productComputed.some((item) => item.id === product.id)) {
-        const productToModifeIndex = productComputed.findIndex(
-          (itemComp) => itemComp.id === product.id
-        );
-        productComputed[productToModifeIndex].stock += 1;
-      } else {
-        const { ...data } = product;
-        const prodcutToPush = {
-          ...data,
-          stock: 1
-        };
-        productComputed.push(prodcutToPush);
-      }
-    });
-
-    return productComputed;
-  };
 
   const PayProductsInCart = () => {
     setModalView(true)
@@ -71,7 +51,7 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
         <h3 style={{ color: '#332927' }}>Productos Seleccionados</h3>
         <ul>
           {
-            productInCartComp().map(({ id, title, price, img, url, stock }) =>
+            productsInCart.map(({ id, title, price, img, url, stock }) =>
               <ItemProductInCart key={id}>
                 <ProductInCheckout
                   id={id}

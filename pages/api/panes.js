@@ -6,7 +6,8 @@ const panes = [
     description: 'Pan campesino',
     url: 'pan-campesino',
     img: /* /public */ '/img/hamburguesa-3d.jpg',
-    price: 3
+    price: 3,
+    units: 1
   },
   {
     id: 4,
@@ -14,7 +15,8 @@ const panes = [
     description: 'Pan de chocolate',
     url: 'pan-chocolate',
     img: /* /public */ '/img/arbol.jpg',
-    price: 2.4
+    price: 2.4,
+    units: 1
   },
 ]
 

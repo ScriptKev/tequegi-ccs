@@ -6,7 +6,8 @@ const tortas = [
     description: 'Torta tipo Poque',
     url: 'torta-clasica',
     img: /* /public */ '/img/teque.jpg',
-    price: 2.3
+    price: 2.3,
+    units: 1
   },
   {
     id: 9,
@@ -14,7 +15,8 @@ const tortas = [
     description: 'Torta de chocolate',
     url: 'torta-chocolate',
     img: /* /public */ '/img/teque.jpg',
-    price: 6.3
+    price: 6.3,
+    units: 1
   },
   {
     id: 10,
@@ -22,7 +24,8 @@ const tortas = [
     description: 'Torta de guayaba',
     url: 'torta-guayaba',
     img: /* /public */ '/img/arbol.jpg',
-    price: 6
+    price: 6,
+    units: 1
   },
 ]
 

@@ -31,10 +31,10 @@ export default function ModalForm({ modalView, setModalView, dispatchProductsInC
     console.log(data, productsInCart)
 
     window.open(`
-      ${BaseUrl}&text=Hola${_}soy${_}${data.fullName}
-      ${__}${__}Estoy${_}interesado${_}en${_}su${_}producto${_}${productsInCart.map(product => product.title)}
-      ${__}${__}Mi${_}numero${_}es${_}${data.phone}
-      ${__}${__}Soy${_}conciente${_}del${_}costo${_}total:${_}${totalPrice(productsInCart)}$`,
+      ${BaseUrl}&text=Hola${_}TequeGi${_}soy${_}${data.fullName}
+      ${__}Estoy${_}interesado/a${_}en${_}ordenar${_}lo${_}siguiente:
+      ${__}${__}${productsInCart.map(product => `${product.title} x${product.stock}`)}
+      ${__}${__}Con${_}un${_}precio${_}total:${_}de${_}${totalPrice(productsInCart)}$`,
       '_blank',
       'toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=600'
     )

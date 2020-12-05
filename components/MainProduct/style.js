@@ -76,6 +76,7 @@ export const TitleMainProductStyled = styled.div`
     padding-left: 15px;
     letter-spacing: -2px;
     color: #7069678f;
+    line-height: 1;
 
   @media (min-width: 320px) and (max-width: 1000px) {
     font-size: 40px;

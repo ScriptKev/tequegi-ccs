@@ -6,7 +6,8 @@ const dulces = [
     description: 'Dulce de chocolate',
     url: 'dulce-chocolate',
     img: /* /public */ '/img/teque.jpg',
-    price: 5
+    price: 5,
+    units: 1
   },
   {
     id: 2,
@@ -14,7 +15,8 @@ const dulces = [
     description: 'Pai de vainlla',
     url: 'dulce-pai-vainilla',
     img: /* /public */ '/img/arbol.jpg',
-    price: 3
+    price: 3,
+    units: 1
   },
 ]
 

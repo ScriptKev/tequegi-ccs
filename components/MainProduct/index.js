@@ -51,6 +51,7 @@ export default function MainProduct({ product }) {
 
           <TitleMainProductStyled>
             <h1>{ProductTitleComputed(product.title)}</h1>
+            <small style={{ fontSize: '16px', fontWeight: 'normal', letterSpacing: 'normal' }}>Unidades: {product.units}</small>
             <p style={{ fontSize: '16px', fontWeight: '600', letterSpacing: 'normal' }}>{product.description}</p>
             <ButtonPay
               title='Añadir al carrito'
