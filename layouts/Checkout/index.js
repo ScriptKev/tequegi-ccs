@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import {
@@ -23,8 +24,13 @@ export default function CheckoutLayout({ productsInCart, dispatchProductsInCart,
 
   const TotalProductsInCart = (products) => {
     let productPriceAcum = 0
+    console.log(products)
 
-    products.forEach(item => productPriceAcum += item.price)
+    products.forEach(item => {
+
+      productPriceAcum += (item.price * item.stock)
+    })
+
     return parseFloat(productPriceAcum).toFixed(2)
   }
 

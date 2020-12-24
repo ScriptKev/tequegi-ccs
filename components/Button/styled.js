@@ -20,6 +20,10 @@ export const ButtonPayStyled = styled.button`
     outline: none;
     filter: opacity(0.8)
   }
+
+  &:active {
+    transform: scale(0.9)
+  }
 `
 
 export const ButtonConfirmStyled = styled.button`
